@@ -1,0 +1,1 @@
+mercury,barometer,pressure,weather,forecast,village,observation,instruments,offline,simulation

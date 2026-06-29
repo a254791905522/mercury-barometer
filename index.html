@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercury Barometer - Whispers of Pressure</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #2d3047; color: #e8e8e8; line-height: 1.6; }
+  .container { max-width: 800px; margin: 0 auto; padding: 24px 16px; }
+  header { text-align: center; padding: 32px 0 24px; }
+  h1 { font-size: 32px; color: #d4af37; margin-bottom: 6px; }
+  .subtitle { color: #a8a8c0; font-size: 18px; font-style: italic; margin-bottom: 12px; }
+  .intro { color: #c8c8d0; max-width: 600px; margin: 0 auto 24px; }
+  section { padding: 24px 0; border-top: 1px solid #3d4060; }
+  h2 { color: #d4af37; font-size: 22px; margin-bottom: 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .shot-card { background: #1f2235; border-radius: 8px; overflow: hidden; }
+  .shot-card img { width: 100%; display: block; }
+  .shot-card h3 { color: #d4af37; padding: 10px 12px 4px; font-size: 14px; }
+  .shot-card p { color: #a8a8c0; padding: 0 12px 12px; font-size: 13px; }
+  .card { background: #1f2235; padding: 16px; border-radius: 8px; margin-bottom: 12px; }
+  .steps { counter-reset: step; list-style: none; }
+  .steps li { counter-increment: step; background: #1f2235; padding: 14px 14px 14px 56px; border-radius: 8px; margin-bottom: 10px; position: relative; }
+  .steps li::before { content: counter(step); position: absolute; left: 14px; top: 14px; width: 28px; height: 28px; background: #d4af37; color: #2c1810; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .steps h3 { color: #d4af37; margin-bottom: 4px; font-size: 15px; }
+  .steps p { color: #a8a8c0; font-size: 13px; }
+  .info-table { width: 100%; border-collapse: collapse; }
+  .info-table td { padding: 8px 12px; border-bottom: 1px solid #3d4060; }
+  .info-table .label { color: #a8a8c0; width: 40%; }
+  .info-table .value { color: #e8e8e8; }
+  footer { text-align: center; color: #707080; font-size: 12px; padding: 24px 0; border-top: 1px solid #3d4060; }
+  a { color: #d4af37; }
+  .qa { margin-bottom: 12px; }
+  .qa h3 { color: #d4af37; font-size: 15px; margin-bottom: 4px; }
+  .qa p { color: #c8c8d0; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Mercury Barometer</h1>
+    <p class="subtitle">Whispers of Pressure</p>
+    <p class="intro">A weather forecasting simulation. Read three classical instruments — barometer, thermometer, hygrometer — and predict the weather to protect your village.</p>
+  </header>
+
+  <section class="screens">
+    <h2>Screenshots</h2>
+    <div class="grid">
+      <div class="shot-card">
+        <img src="screenshots_65/01_menu.png" alt="Mercury Barometer main menu">
+        <h3>Main Menu</h3>
+        <p>Start forecasting, choose a station, or adjust settings.</p>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots_65/02_game1.png" alt="Reading the barometer">
+        <h3>Read Instruments</h3>
+        <p>Watch the gauges fill, then tap a weather prediction.</p>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots_65/03_game2.png" alt="Forecasting weather">
+        <h3>Predict Weather</h3>
+        <p>Five weather types: sunny, cloudy, rainy, storm, snowy.</p>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots_65/04_game3.png" alt="Multi-day contract">
+        <h3>Multi-Day Contracts</h3>
+        <p>Predict several days in a row for a combined score.</p>
+      </div>
+      <div class="shot-card">
+        <img src="screenshots_65/05_game-success.png" alt="Forecast complete">
+        <h3>Forecast Complete</h3>
+        <p>Earn up to three stars based on accuracy, speed, and safety.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>About Mercury Barometer</h2>
+    <div class="card">
+      <p>Mercury Barometer is an offline weather forecasting simulation built with SpriteKit. You play as a village weather observer stationed at historic observation posts across the world, reading classical mercury instruments to predict the next day's weather and keep your village safe from storms.</p>
+      <p style="margin-top:12px;">Three instruments, five weather types, fifty contracts across five atmospheric observation stations. Read the pressure, temperature, and humidity, infer the incoming weather, and protect the village health bar.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>How to Play</h2>
+    <ol class="steps">
+      <li>
+        <h3>Read the Instruments</h3>
+        <p>Each day the barometer, thermometer, and hygrometer fill to new readings. Watch the needle settle.</p>
+      </li>
+      <li>
+        <h3>Infer the Weather</h3>
+        <p>Combine the three readings with the on-screen hint to decide between sunny, cloudy, rainy, storm, or snowy.</p>
+      </li>
+      <li>
+        <h3>Tap a Prediction</h3>
+        <p>Tap one of the five weather buttons at the bottom. Correct predictions keep the village safe; wrong ones cost 20% safety.</p>
+      </li>
+      <li>
+        <h3>Multi-Day Contracts</h3>
+        <p>Levels 9, 20, 35, and 50 are multi-day contracts (3 or 5 days). Predict each day in sequence for a combined score.</p>
+      </li>
+      <li>
+        <h3>Earn Stars</h3>
+        <p>Score combines accuracy (60), speed (20), and village safety (20). Three stars require 80 or higher.</p>
+      </li>
+      <li>
+        <h3>Progress Through Stations</h3>
+        <p>50 contracts span five stations, each hiding more instruments and offering more weather options.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Support</h2>
+    <div class="qa">
+      <h3>How do I play?</h3>
+      <p>Read the three instruments, pick the matching weather button. Wrong predictions cost village safety.</p>
+    </div>
+    <div class="qa">
+      <h3>Does it need internet?</h3>
+      <p>No. Mercury Barometer is fully offline. No accounts, no ads, no tracking.</p>
+    </div>
+    <div class="qa">
+      <h3>Need help?</h3>
+      <p>Visit the App Store product page for support contact after release.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>App Information</h2>
+    <table class="info-table">
+      <tr><td class="label">Genre</td><td class="value">Games / Simulation</td></tr>
+      <tr><td class="label">Compatibility</td><td class="value">iOS 15.0 or later</td></tr>
+      <tr><td class="label">Device Support</td><td class="value">iPhone only</td></tr>
+      <tr><td class="label">Age Rating</td><td class="value">4+</td></tr>
+      <tr><td class="label">Version</td><td class="value">1.0</td></tr>
+      <tr><td class="label">Language</td><td class="value">English</td></tr>
+      <tr><td class="label">Privacy</td><td class="value">No data collected</td></tr>
+      <tr><td class="label">Bundle ID</td><td class="value">com.rosewood.mercurybarometer.game</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Rosewood Studio. All rights reserved.</p>
+    <p style="margin-top:8px;"><a href="/privacy.html">Privacy Policy</a></p>
+  </footer>
+</div>
+</body>
+</html>
